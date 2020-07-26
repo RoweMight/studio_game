@@ -1,16 +1,17 @@
-puts "EXERCISE 3"
-name1 = 'larry'
-name2 = 'curly'
-name3 = 'moe'
+require_relative 'player'
+require_relative 'game'
 
-health1 = 60
-puts "#{name1} 's  health is + #{health1*3}"
+player1= Player.new("larry",90)
 
-puts  "Players \n\tlarry\n\tcurly\n\tmoe"
-puts "Players \n\t#{name1}\n\t#{name2}\n\t#{name3}"
+player2=Player.new("moe")
 
+player3 =Player.new("curly",125)
 
+knuckleheads = Game.new("knuckleheads")
+puts knuckleheads.title
+puts "\n"
 
-puts "EXERCISE 4"
-
-puts "#{name1.capitalize} has a health of #{health1}"
+knuckleheads.add_player(player1)
+knuckleheads.add_player(player2)
+knuckleheads.add_player(player3)
+knuckleheads.play

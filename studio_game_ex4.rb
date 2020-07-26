@@ -1,22 +1,22 @@
-puts "EXERCISE 3"
-name1 = 'larry'
-name2 = 'curly'
+# puts "EXERCISE 3"
+# name1 = 'larry'
+# name2 = 'curly'
 
 
-health1 = 60
-health2 = 125
+# health1 = 60
+# health2 = 125
 
-puts "#{name1.capitalize} has a health of #{health1}"
+# puts "#{name1.capitalize} has a health of #{health1}"
 
-puts "#{name2.capitalize} has a health of #{health2}"
+# puts "#{name2.capitalize} has a health of #{health2}"
 
-health2 = health1
+# health2 = health1
 
-puts "#{name2.capitalize} has a health of #{health2}"
+# puts "#{name2.capitalize} has a health of #{health2}"
 
-health1 = 30
-puts "#{name1.capitalize} has a health of #{health1}"
-puts "#{name2.capitalize} has a health of #{health2}"
+# health1 = 30
+# puts "#{name1.capitalize} has a health of #{health1}"
+# puts "#{name2.capitalize} has a health of #{health2}"
 
 
 name3 = 'moe'
