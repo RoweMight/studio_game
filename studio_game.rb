@@ -1,7 +1,7 @@
 require_relative 'player'
 require_relative 'game'
 
-player1= Player.new("larry",90)
+player1= Player.new("larry",150)
 
 player2=Player.new("moe")
 
