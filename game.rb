@@ -1,6 +1,9 @@
 require_relative 'player'
+require_relative 'die'
+require_relative 'game_turn'
 
  class Game
+    
     attr_reader :title
     
     def initialize (title)
@@ -17,16 +20,15 @@ require_relative 'player'
     def play
         puts "There are #{@players.size} players in #{title}."
         @players.each do |player|
-            puts player
-        end 
+         puts player
 
+    end 
+       
         @players.each do |player|
-            player.w00t
-            player.w00t
-            player.w00t
-            player.blam
-        puts player 
-        puts "\n"
+            GameTurn.take_turn(player) 
         end
+
+                    
+        
     end
 end
