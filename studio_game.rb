@@ -9,7 +9,7 @@ player3 =Player.new("curly",125)
 
 player4 =Player.new("shemp", 160)
 
-player5 =Player.new("dave", 75)
+player5 =Player.new("dave", 100)
 
 knuckleheads = Game.new("knuckleheads")
 puts knuckleheads.title

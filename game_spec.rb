@@ -12,7 +12,7 @@ describe Game do
     @player = Player.new("moe", @initial_health)
     
     @game.add_player(@player)
-  end
+ end
 
     it "W00ts the player if a high number is rolled" do
         allow_any_instance_of(Die).to receive(:roll).and_return(5)
@@ -20,7 +20,7 @@ describe Game do
         @game.play(2)
 
         expect(@player.health).to eq(@initial_health + (15*2))
-  end
+   end
   
     it "Skips the player if a medium number is rolled" do
         allow_any_instance_of(Die).to receive(:roll).and_return(3)
@@ -38,6 +38,19 @@ describe Game do
         expect(@player.health).to eq(@initial_health -(10*2))
     end
 
-       
-      
+    def play(rounds)
+      puts  "There are #{@players.size} players in the #{@title}:"
+
+        @players.each do |player|
+          puts player
+        end
+
+      1.upto(rounds) do |round|
+        puts "\nRound #{round}:"    
+        @players.each do |player|
+          GameTurn.take_turn(player)
+          puts player
+      end
+    end
+  end      
 end
