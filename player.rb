@@ -1,4 +1,3 @@
-require_relative 'game'
 require_relative 'treasure_trove'
 
 class Player
@@ -11,25 +10,8 @@ class Player
         @health = health
         @found_treasures = Hash.new(0)
     end
-    
-   
-
-    def found_treasure(treasure)   
-        @found_treasures[treasure.name] += treasure.points 
-        
-        puts "/n #{@name} found a #{treasure.name} worth #{treasure.points}"
-        puts "#{@name}'s treasures: #{@found_treasures}"
-    end
-   
        
-
-    def points
-        @found_treasures.value.reduce(0, :+)
-    end
-
-    def score
-        @health + points
-    end
+    
     
     def w00t
         @health += 15
@@ -41,16 +23,45 @@ class Player
         puts "#{@name} got blammed!"
     end
 
-    def to_s
-         "I'm #{@name} with a health of #{@health}, points = #{points}, a score of #{score}."
+    def score
+        @health + points
+    end
+    
+    def points
+        @found_treasures.values.reduce(0, :+)
     end
     
     def strong?
-        @health >100
-        
-     end
+        @health >100     
+    end
 
+    def found_treasure(treasure)   
+        @found_treasures[treasure.name] += treasure.points 
+        
+        puts "#{@name} found a #{treasure.name} worth #{treasure.points}"
+        puts "#{@name}'s treasures: #{@found_treasures}"
+    end
+   
+    def each_found_treasure
+        @found_treasures.each do |name, points|
+            yield Treasure.new(name,points)
+        end
+    end
+
+    def <=> (other)
+        other.score <=> score
+    end
+
+    def to_s
+         "I'm #{@name} with a health of #{@health}, points =#{points}, a score of #{score}."
+    end  
+       
     
+  def self.from_csv(string)
+    name, health = string.split(',')    
+    new(name, Integer(health))
+  end
+ 
 
 end
 
