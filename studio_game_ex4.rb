@@ -19,15 +19,15 @@
 # puts "#{name2.capitalize} has a health of #{health2}"
 
 
-name3 = 'moe'
-health3 = 100
+# name3 = 'moe'
+# health3 = 100
 
-puts "#{name3.capitalize} has a health of #{health3}".center(40,'*')
+# puts "#{name3.capitalize} has a health of #{health3}".center(40,'*')
 
-name4 = "shemp"
-health4 = 90
+# name4 = "shemp"
+# health4 = 90
 
-puts "#{name4.capitalize} has a health of #{health4}".ljust(40,'*')
+# puts "#{name4.capitalize} has a health of #{health4}".ljust(40,'*')
 
-puts '123'.to_s.reverse
-puts '123'.to_s.reverse.to_i
+# puts '123'.to_s.reverse
+# puts '123'.to_s.reverse.to_i
