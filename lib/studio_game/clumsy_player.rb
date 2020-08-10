@@ -1,22 +1,23 @@
 require_relative 'player'
 
+module StudioGame
 
-class ClumsyPlayer < Player
-
-  def initialize(name, health =100, boost=1)
-    super(name,health)
-    @boost=boost
-  end
-
-  def w00t
-    @boost.times {super}
-  end
+  class ClumsyPlayer <Player
 
     def found_treasure(treasure)
-        damaged_treasure = Treasure.new(treasure.name, treasure.points/2.0)
-        super(damaged_treasure)
+      damaged_treasure = Treasure.new(treasure.name, treasure.points/2.0)
+      super(damaged_treasure)
     end
+  end
 end
+    # def initialize(name, health =100, boost=1)
+    #   super(name,health)
+    #   @boost=boost
+    # end
+
+    # def w00t
+    #   @boost.times {super}
+    # end
 
 if __FILE__ == $0
     clumsy = ClumsyPlayer.new("klutz")  
@@ -33,4 +34,4 @@ if __FILE__ == $0
       puts "#{treasure.points} total #{treasure.name} points"
     end
     puts "#{clumsy.points} grand total points"
-  end
+end
